@@ -1,39 +1,16 @@
-const http = require('http');
-const path = require('path');
-const fs = require('fs');
+document.getElementById("login-form").addEventListener("submit", function (event) {
+  event.preventDefault();
 
-const port = process.env.PORT || 3000;
+  // Perform user authentication here (e.g., compare entered username/password).
 
-const server = http.createServer((req, res) => {
-  let filePath = path.join(__dirname, req.url === '/' ? '/index.html' : req.url);
-  let extname = path.extname(filePath);
-  let contentType = 'text/html';
+  // For this example, let's assume the username is "user" and the password is "password".
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
 
-  switch (extname) {
-    case '.css':
-      contentType = 'text/css';
-      break;
-    case '.js':
-      contentType = 'text/javascript';
-      break;
+  if (username === "user" && password === "password") {
+    // Redirect to the dashboard (replace with the actual dashboard URL).
+    window.location.href = "dashboard.html";
+  } else {
+    alert("Invalid credentials. Please try again.");
   }
-
-  fs.readFile(filePath, (error, content) => {
-    if (error) {
-      if (error.code === 'ENOENT') {
-        res.writeHead(404);
-        res.end('404 - File Not Found');
-      } else {
-        res.writeHead(500);
-        res.end('500 - Internal Server Error');
-      }
-    } else {
-      res.writeHead(200, { 'Content-Type': contentType });
-      res.end(content, 'utf-8');
-    }
-  });
-});
-
-server.listen(port, () => {
-  console.log(`Server running on port ${port}`);
 });

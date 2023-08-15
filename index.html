@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="styles.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Austtn's Flash Websites</title>
+  <link rel="stylesheet" href="styles.css">
+  <title>Login</title>
 </head>
 <body>
-  <header>
-    <h1>Austen's Flash Websites</h1>
-    <p>I will make you a fancy website like this one for $50 NZD yearly flat rate.</p>
-    <br>
-    <p>Email me at austintweed111@gmail.com</p>
-  </header>
-  
-  <footer>
-    <p>All rights reserved &copy; Austin's Flash Websites</p>
-  </footer>
+  <div class="login-container">
+    <h1>Login</h1>
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Log in</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
