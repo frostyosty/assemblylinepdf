@@ -1,14 +1,21 @@
 {
-    "name": "AustensWebsite",
-    "version": "1.0.0",
-    "description": "Cool website template",
-    "main": "server.js", 
-    "scripts": {
-      "start": "node server.js",
-      "build": "mkdir -p public && cp index.html styles.css server.js public/"
-    },
-    "dependencies": {
-      "express": "^4.17.1"
-    }
-  }
-  
+  "name": "austenswebsite",
+  "version": "1.0.0",
+  "description": "Cool website template",
+  "main": "server.js",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "husky": "^4.3.8",
+    "svelte": "^4.2.0",
+    "svelte-kit": "^1.2.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
